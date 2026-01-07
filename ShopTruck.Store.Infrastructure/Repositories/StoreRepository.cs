@@ -12,5 +12,21 @@ public class StoreRepository(AppDbContext dbContext) : IStoreRepository
         await dbContext.SaveChangesAsync();
         return store;
         }
+
+    public Task<bool> DeleteStoreByIdAsync(Guid guid)
+        {
+        throw new NotImplementedException();
+        }
+
+    public Task<Domain.Entities.Store> UpdateStoreByIdAsync(Guid guid)
+        {
+        throw new NotImplementedException();
+        }
+
+    public async Task<Domain.Entities.Store> GetStoreByIdAsync(Guid guid)
+        {
+        var store = await dbContext.Stores.FindAsync(guid);
+        return store;
+        }
     }
 
