@@ -1,13 +1,14 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace ShopTruck.Store.Application
-    {
-    public static class DependencyInjection
-        {
-        public static IServiceCollection AddApplicationDI(this IServiceCollection services)
-            {
+namespace ShopTruck.Store.Application;
 
-            return services;
-            }
+public static class DependencyInjection
+    {
+    public static IServiceCollection AddApplicationDI(this IServiceCollection services)
+        {
+        var assembly = typeof(DependencyInjection).Assembly;
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
+        return services;
         }
     }
+
