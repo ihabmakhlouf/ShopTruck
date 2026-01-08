@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ShopTruck.Store.Application.Commands;
 using ShopTruck.Store.Application.Dtos;
+using ShopTruck.Store.Application.Queries;
 
 namespace ShopTruck.Store.Api.Controllers
     {
@@ -9,11 +10,27 @@ namespace ShopTruck.Store.Api.Controllers
     [ApiController]
     public class StoreController(ISender sender) : ControllerBase
         {
-        [HttpPost("AddStore")]
-        public async Task<IActionResult> AddProductAsync([FromBody] StoreDto storeDto)
+
+        [HttpPost("CreateStore")]
+        public async Task<IActionResult> CreateStoreAsync([FromBody] StoreDto storeDto)
             {
             var newStore = await sender.Send(new CreateStoreCommand(storeDto));
             return Ok(newStore);
             }
+
+        [HttpPost("UpdateStore")]
+        public async Task<IActionResult> UpdateStoreByIdAsync([FromBody] Guid guid)
+            {
+            var store = await sender.Send(new UpdateStoreByIdCommand(guid));
+            return Ok(store);
+            }
+
+        [HttpPost("GetStoreById{guid}")]
+        public async Task<IActionResult> GetStoreByIdAsync(Guid guid)
+            {
+            var store = await sender.Send(new GetStoreByIdQuery(guid));
+            return Ok(store);
+            }
         }
+
     }
