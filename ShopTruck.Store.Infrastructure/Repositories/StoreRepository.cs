@@ -13,19 +13,27 @@ public class StoreRepository(AppDbContext dbContext) : IStoreRepository
         return store;
         }
 
-    public Task<bool> DeleteStoreByIdAsync(Guid guid)
+    public async Task<bool> DeleteStoreByIdAsync(Guid guid)
         {
-        throw new NotImplementedException();
+        var storeToDelete = await GetStoreByIdAsync(guid);
+        dbContext.Remove(storeToDelete);
+        await dbContext.SaveChangesAsync();
+        return true;
         }
 
-    public Task<Domain.Entities.Store> UpdateStoreByIdAsync(Guid guid)
+    public async Task<Domain.Entities.Store> UpdateStoreByIdAsync(Guid guid)
         {
-        throw new NotImplementedException();
+        var storeToUpdate = await GetStoreByIdAsync(guid);
+        dbContext.Stores.Update(storeToUpdate);
+        await dbContext.SaveChangesAsync();
+        return storeToUpdate;
         }
 
     public async Task<Domain.Entities.Store> GetStoreByIdAsync(Guid guid)
         {
         var store = await dbContext.Stores.FindAsync(guid);
+        if (store == null)
+            throw new KeyNotFoundException($"Store with id {guid} not found.");
         return store;
         }
     }
