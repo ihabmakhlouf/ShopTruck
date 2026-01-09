@@ -7,9 +7,9 @@ public record DeleteStoreByIdCommand(Guid Guid) : IRequest<bool>;
 
 public class DeleteStoreCommandHandler(IStoreRepository storeRepository) : IRequestHandler<DeleteStoreByIdCommand, bool>
     {
-    public Task<bool> Handle(DeleteStoreByIdCommand request, CancellationToken cancellationToken)
+    public async Task<bool> Handle(DeleteStoreByIdCommand request, CancellationToken cancellationToken)
         {
-        throw new NotImplementedException();
+        return await storeRepository.DeleteStoreByIdAsync(request.Guid);
         }
     }
 
