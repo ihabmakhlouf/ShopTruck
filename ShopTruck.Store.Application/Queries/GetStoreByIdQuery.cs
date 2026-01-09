@@ -4,7 +4,7 @@ using ShopTruck.Store.Domain.Interfaces;
 
 namespace ShopTruck.Store.Application.Queries;
 
-public record GetStoreByIdQuery(Guid Guid): IRequest<StoreDto>;
+public record GetStoreByIdQuery(Guid Guid) : IRequest<StoreDto>;
 
 public class GetStoreByIdQueryHandler(IStoreRepository storeRepository) : IRequestHandler<GetStoreByIdQuery, StoreDto>
     {

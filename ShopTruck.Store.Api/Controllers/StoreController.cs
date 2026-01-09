@@ -25,11 +25,25 @@ namespace ShopTruck.Store.Api.Controllers
             return Ok(store);
             }
 
+        [HttpPost("DeleteStoreById")]
+        public async Task<IActionResult> DeleteStoreByIdAsync([FromBody] Guid guid)
+            {
+            var store = await sender.Send(new DeleteStoreByIdCommand(guid));
+            return Ok(store);
+            }
+
         [HttpPost("GetStoreById{guid}")]
         public async Task<IActionResult> GetStoreByIdAsync(Guid guid)
             {
             var store = await sender.Send(new GetStoreByIdQuery(guid));
             return Ok(store);
+            }
+
+        [HttpPost("GetStores")]
+        public async Task<IActionResult> GetStoresAsync()
+            {
+            var stores = await sender.Send(new GetAllStoresQuery());
+            return Ok(stores);
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using ShopTruck.Store.Domain.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ShopTruck.Store.Domain.Interfaces;
 using ShopTruck.Store.Infrastructure.Data;
 
 namespace ShopTruck.Store.Infrastructure.Repositories;
@@ -35,6 +36,11 @@ public class StoreRepository(AppDbContext dbContext) : IStoreRepository
         if (store == null)
             throw new KeyNotFoundException($"Store with id {guid} not found.");
         return store;
+        }
+
+    public async Task<List<Domain.Entities.Store>> GetStoresAsync()
+        {
+        return await dbContext.Stores.ToListAsync();
         }
     }
 

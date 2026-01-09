@@ -1,9 +1,9 @@
-﻿namespace ShopTruck.Store.Application.Dtos
+﻿namespace ShopTruck.Store.Application.Dtos;
+
+public class StoreDto
     {
-    public class StoreDto
-        {
-        public Guid Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public bool IsActive { get; private set; }
-        }
+    public Guid Id { get; set; }
+    public string Name { get; set; } = null!;
+    public AddressDto AddressDto { get; set; } = null!;
     }
+

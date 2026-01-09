@@ -6,5 +6,6 @@ public interface IStoreRepository
     Task<Entities.Store> UpdateStoreByIdAsync(Guid guid);
     Task<bool> DeleteStoreByIdAsync(Guid guid);
     Task<Entities.Store> GetStoreByIdAsync(Guid guid);
+    Task<List<Domain.Entities.Store>> GetStoresAsync();
     }
 
