@@ -12,4 +12,13 @@
     <PackageReference Include="MediatR" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShopTruck.Product.Domain\ShopTruck.Product.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
