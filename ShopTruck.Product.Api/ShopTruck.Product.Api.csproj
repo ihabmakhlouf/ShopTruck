@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\ShopTruck.Product.Application\ShopTruck.Product.Application.csproj" />
+    <ProjectReference Include="..\ShopTruck.Product.Infrastructure\ShopTruck.Product.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
