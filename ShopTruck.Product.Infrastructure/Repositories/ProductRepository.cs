@@ -40,7 +40,7 @@ public class ProductRepository(AppDbContext dbContext) : IProductRepository
         productToUpdate.Description = product.Description;
         productToUpdate.CategoryId = product.CategoryId;
         productToUpdate.Name = product.Name;
-        dbContext.Products.Update(product);
+        dbContext.Products.Update(productToUpdate);
         await dbContext.SaveChangesAsync();
         return true;
         }
