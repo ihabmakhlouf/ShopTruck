@@ -7,7 +7,7 @@ namespace MyApp.Application.Commands;
 
 public record AddProductCommand(ProductDto productDto) : IRequest<ProductDto>;
 
-public class AddProductCommandHandler(IProductRepository productRepository, IPublisher publisher) : IRequestHandler<AddProductCommand, ProductDto>
+public class AddProductCommandHandler(IProductRepository productRepository) : IRequestHandler<AddProductCommand, ProductDto>
     {
     public async Task<ProductDto> Handle(AddProductCommand request, CancellationToken cancellationToken)
         {
