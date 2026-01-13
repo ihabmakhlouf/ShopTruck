@@ -5,11 +5,11 @@ using ShopTruck.Product.Domain.Interfaces;
 
 namespace ShopTruck.Product.Application.Commands;
 
-public record UpdateCategoryByIdQuery(CategoryDto CategoryDto, Guid Guid) : IRequest<bool>;
+public record UpdateCategoryByIdCommand(CategoryDto CategoryDto, Guid Guid) : IRequest<bool>;
 
-public class UpdateCategoryByIdQueryHandler(ICategoryRepository categoryRepository) : IRequestHandler<UpdateCategoryByIdQuery, bool>
+public class UpdateCategoryByIdQueryHandler(ICategoryRepository categoryRepository) : IRequestHandler<UpdateCategoryByIdCommand, bool>
     {
-    public async Task<bool> Handle(UpdateCategoryByIdQuery request, CancellationToken cancellationToken)
+    public async Task<bool> Handle(UpdateCategoryByIdCommand request, CancellationToken cancellationToken)
         {
         Category category = new Category
             {
