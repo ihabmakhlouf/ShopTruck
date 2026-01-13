@@ -32,14 +32,14 @@ namespace ShopTruck.Store.Api.Controllers
             return Ok(store);
             }
 
-        [HttpPost("GetStoreById{guid}")]
+        [HttpGet("GetStoreById{guid}")]
         public async Task<IActionResult> GetStoreByIdAsync(Guid guid)
             {
             var store = await sender.Send(new GetStoreByIdQuery(guid));
             return Ok(store);
             }
 
-        [HttpPost("GetStores")]
+        [HttpGet("GetStores")]
         public async Task<IActionResult> GetStoresAsync()
             {
             var stores = await sender.Send(new GetAllStoresQuery());

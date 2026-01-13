@@ -32,14 +32,14 @@ namespace ShopTruck.Product.Api.Controllers
             return Ok(result);
             }
 
-        [HttpPost("GetCategoryById{guid}")]
+        [HttpGet("GetCategoryById{guid}")]
         public async Task<IActionResult> GetCategoryByIdAsync(Guid guid)
             {
             var category = await sender.Send(new GetCategoryByIdQuery(guid));
             return Ok(category);
             }
 
-        [HttpPost("GetCategories")]
+        [HttpGet("GetCategories")]
         public async Task<IActionResult> GetCategoriesAsync()
             {
             var categories = await sender.Send(new GetAllCategoriesQuery());
