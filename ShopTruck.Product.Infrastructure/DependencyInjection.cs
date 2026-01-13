@@ -4,7 +4,7 @@ using ShopTruck.Product.Domain.Interfaces;
 using ShopTruck.Product.Infrastructure.Repositories;
 
 
-namespace ShopTruck.Store.Infrastructure;
+namespace ShopTruck.Product.Infrastructure;
 
 public static class DependencyInjection
     {
