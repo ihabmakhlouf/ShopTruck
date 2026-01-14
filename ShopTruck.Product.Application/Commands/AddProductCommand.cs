@@ -16,6 +16,7 @@ public class AddProductCommandHandler(IProductRepository productRepository) : IR
             Name = request.productDto.Name,
             CategoryId = request.productDto.CategoryId,
             Description = request.productDto.Description,
+            Price = request.productDto.Price,
             });
 
         return new ProductDto
@@ -24,6 +25,7 @@ public class AddProductCommandHandler(IProductRepository productRepository) : IR
             Name = product.Name,
             Description = product.Description,
             CategoryId = product.CategoryId,
+            Price = product.Price,
             };
         }
     }

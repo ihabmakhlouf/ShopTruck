@@ -14,6 +14,7 @@ public class GetProductByIdQueryHandler(IProductRepository productRepository) : 
             {
             Id = product.Id,
             Description = product.Description,
+            Price = product.Price,
             Name = product.Name,
             CategoryId = product.CategoryId,
             };
