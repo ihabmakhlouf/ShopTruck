@@ -39,6 +39,7 @@ public class ProductRepository(AppDbContext dbContext) : IProductRepository
         var productToUpdate = await GetProductByIdAsync(id);
         productToUpdate.Description = product.Description;
         productToUpdate.CategoryId = product.CategoryId;
+        productToUpdate.Price = product.Price;
         productToUpdate.Name = product.Name;
         dbContext.Products.Update(productToUpdate);
         await dbContext.SaveChangesAsync();

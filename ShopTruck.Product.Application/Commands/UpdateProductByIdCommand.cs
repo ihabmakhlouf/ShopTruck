@@ -13,6 +13,7 @@ public class UpdateProductByIdCommandHandler(IProductRepository productRepositor
         Domain.Entities.Product product = new Domain.Entities.Product
             {
             Description = request.ProductDto.Description,
+            Price = request.ProductDto.Price,
             CategoryId = request.ProductDto.CategoryId,
             Name = request.ProductDto.Name,
             };
