@@ -10,7 +10,7 @@ public record GetAllCategoriesQuery : IRequest<IEnumerable<CategoryDto>>;
 
 public class GetAllCategoriesQueryHandler(ICategoryRepository categoryRepository, ICacheService cache) : IRequestHandler<GetAllCategoriesQuery, IEnumerable<CategoryDto>>
     {
-    private static readonly TimeSpan CacheTtl = TimeSpan.FromMinutes(30);
+    private static readonly TimeSpan CacheTtl = TimeSpan.FromMinutes(100);
     public async Task<IEnumerable<CategoryDto>> Handle(GetAllCategoriesQuery request, CancellationToken cancellationToken)
         {
         var cacheKey = CacheKeys.CategoryList();
