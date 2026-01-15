@@ -5,6 +5,7 @@ public static class CacheKeys
     public static string Product(Guid id) => $"product:{id}";
     public static string Store(Guid id) => $"store:{id}";
     public static string ProductList() => "product:list";
+    public static string CategoryList() => "category:list";
     public static string StoreList() => "store:list";
     }
 

@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure.Cache\ShopTruck.Infrastructure.Cache.csproj" />
+    <ProjectReference Include="..\ShopTruck.Product.Application\ShopTruck.Product.Application.csproj" />
   </ItemGroup>
 
 </Project>
