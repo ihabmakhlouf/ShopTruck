@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopTruck.Product.Domain.Entities;
-using ShopTruck.Product.Domain.Interfaces;
+using ShopTruck.Category.Domain.Entities;
+using ShopTruck.Category.Domain.Interfaces;
 
 
 namespace ShopTruck.Product.Infrastructure.Repositories;
