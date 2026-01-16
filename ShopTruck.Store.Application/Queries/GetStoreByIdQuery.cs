@@ -24,6 +24,7 @@ public class GetStoreByIdQueryHandler(IStoreRepository storeRepository, ICacheSe
                         {
                         Id = store.Id,
                         Name = store.Name,
+                        VendorId = store.VendorId,
                         };
 
                 }, CacheTtl);
