@@ -19,13 +19,16 @@ public class CreateStoreCommandHandler(IStoreRepository storeRepository) : IRequ
                 request.StoreDto.AddressDto.Street, 
                 request.StoreDto.AddressDto.City,
                 request.StoreDto.AddressDto.PostalCode,
-                request.StoreDto.AddressDto.Country)
+                request.StoreDto.AddressDto.Country),
+            VendorId = request.StoreDto.VendorId,
             }
+            
         );
         return new StoreDto
             {
             Id = newStore.Id,
             Name = newStore.Name,
+            VendorId = newStore.VendorId,
             AddressDto = new AddressDto
                 {
                 City = newStore.Address.City,

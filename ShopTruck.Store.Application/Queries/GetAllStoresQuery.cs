@@ -29,7 +29,8 @@ public class GetAllStoresQueryHandler(IStoreRepository storeRepository, ICacheSe
                     City = p.Address.City,
                     PostalCode = p.Address.PostalCode,
                     Street = p.Address.Street,
-                    }
+                    },
+                VendorId = p.VendorId
                 }).ToList();
 
         }, CacheTtl);

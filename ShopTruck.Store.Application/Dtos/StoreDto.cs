@@ -5,5 +5,7 @@ public class StoreDto
     public Guid Id { get; set; }
     public string Name { get; set; } = null!;
     public AddressDto AddressDto { get; set; } = null!;
+    public Guid VendorId { get; set; }
+
     }
 
