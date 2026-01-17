@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "ShopTruck.Store.Grpc.Protos";
+
+service VendorGrpcService
+{
+	rpc GetVendorById(GetVendorByIdRequest) returns (GetVendorByIdResponse);
+}
+
+message GetVendorByIdRequest
+{
+	string id = 1;
+}
+
+message GetVendorByIdResponse 
+{
+  string firstName = 1;
+  string lastName = 2;
+  string email = 3;
+}
