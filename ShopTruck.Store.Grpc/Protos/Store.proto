@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "ShopTruck.Store.Grpc";
+
+service StoreGrpcService
+{
+	rpc GetStoreById(GetStoreByIdRequest) returns (GetStoreByIdResponse);
+}
+
+message GetStoreByIdRequest
+{
+	string id = 1;
+}
+
+message GetStoreByIdResponse 
+{
+  string name = 1;
+  string street = 2;
+  string City = 3;
+  string Country = 4;
+  string PostalCode = 5;
+}
