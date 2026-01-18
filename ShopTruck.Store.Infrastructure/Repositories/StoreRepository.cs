@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShopTruck.Store.Domain.Entities;
 using ShopTruck.Store.Domain.Interfaces;
 using ShopTruck.Store.Infrastructure.Data;
 
@@ -22,9 +23,11 @@ public class StoreRepository(AppDbContext dbContext) : IStoreRepository
         return true;
         }
 
-    public async Task<Domain.Entities.Store> UpdateStoreByIdAsync(Guid guid)
+    public async Task<Domain.Entities.Store> UpdateStoreByIdAsync(Guid guid, Domain.Entities.Store store)
         {
         var storeToUpdate = await GetStoreByIdAsync(guid);
+        storeToUpdate.Address = store.Address;
+        storeToUpdate.Name = store.Name;
         dbContext.Stores.Update(storeToUpdate);
         await dbContext.SaveChangesAsync();
         return storeToUpdate;
