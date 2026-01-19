@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopTruck.Infrastructure.Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopTruck.Store.Grpc", "ShopTruck.Store.Grpc\ShopTruck.Store.Grpc.csproj", "{21604E6F-5376-47D9-BC42-49450349A93B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopTruck.Product.Grpc", "ShopTruck.Product.Grpc\ShopTruck.Product.Grpc.csproj", "{EE0FCD00-9161-4390-A340-1DD4B766EED7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{21604E6F-5376-47D9-BC42-49450349A93B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21604E6F-5376-47D9-BC42-49450349A93B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21604E6F-5376-47D9-BC42-49450349A93B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE0FCD00-9161-4390-A340-1DD4B766EED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE0FCD00-9161-4390-A340-1DD4B766EED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE0FCD00-9161-4390-A340-1DD4B766EED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE0FCD00-9161-4390-A340-1DD4B766EED7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +156,7 @@ Global
 		{5043F120-0F71-4BD6-B3C9-3BE4BF56E3F2} = {6ACDFFF8-1F95-4941-910A-920F6618E250}
 		{7D73CA66-1ACC-4D58-8216-68C50980D0B0} = {69FACACC-6F04-480A-9E5A-6A75B5D4D4D0}
 		{21604E6F-5376-47D9-BC42-49450349A93B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{EE0FCD00-9161-4390-A340-1DD4B766EED7} = {7C16A3FF-ED50-4D9C-98EF-59EB13AB779B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A22D8AC7-8557-4563-933F-77DF600E233A}
