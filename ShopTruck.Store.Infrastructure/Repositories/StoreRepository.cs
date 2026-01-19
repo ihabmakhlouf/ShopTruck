@@ -2,6 +2,7 @@
 using ShopTruck.Store.Domain.Entities;
 using ShopTruck.Store.Domain.Interfaces;
 using ShopTruck.Store.Infrastructure.Data;
+using System;
 
 namespace ShopTruck.Store.Infrastructure.Repositories;
 
@@ -44,6 +45,18 @@ public class StoreRepository(AppDbContext dbContext) : IStoreRepository
     public async Task<List<Domain.Entities.Store>> GetStoresAsync()
         {
         return await dbContext.Stores.ToListAsync();
+        }
+
+    public async Task<List<Domain.Entities.Store>> GetStoresByIdsAsync(List<Guid> ids)
+        {
+        return await dbContext.Stores.Where(x=> ids.Contains(x.Id))
+                                     .ToListAsync();
+        }
+
+    public async Task<List<Domain.Entities.Store>> GetStoresByVendorIdAsync(Guid vendorId)
+        {
+        return await dbContext.Stores.Where(x => x.VendorId == vendorId)
+                                   .ToListAsync();
         }
     }
 
