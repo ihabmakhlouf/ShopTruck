@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ShopTruck.Store.Application.Commands;
 using ShopTruck.Store.Application.Dtos;
 using ShopTruck.Store.Application.Queries;
+using ShopTruck.Store.Domain.Entities;
 
 namespace ShopTruck.Store.Api.Controllers
     {
@@ -43,6 +44,20 @@ namespace ShopTruck.Store.Api.Controllers
         public async Task<IActionResult> GetStoresAsync()
             {
             var stores = await sender.Send(new GetAllStoresQuery());
+            return Ok(stores);
+            }
+
+        [HttpGet("GetStoresByVendorId{vendorId}")]
+        public async Task<IActionResult> GetStoresByVendorIdAsync(Guid vendorId)
+            {
+            var stores = await sender.Send(new GetStoresByVendorIdQuery(vendorId));
+            return Ok(stores);
+            }
+
+        [HttpPost("GetStoresByIds")]
+        public async Task<IActionResult> GetStoresByIdsAsync([FromBody] List<Guid> ids)
+            {
+            var stores = await sender.Send(new GetStoresByIdsQuery(ids));
             return Ok(stores);
             }
         }
