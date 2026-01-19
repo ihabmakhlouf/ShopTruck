@@ -18,10 +18,10 @@ namespace ShopTruck.Store.Api.Controllers
             return Ok(newStore);
             }
 
-        [HttpPost("UpdateStore")]
-        public async Task<IActionResult> UpdateStoreByIdAsync([FromBody] Guid guid)
+        [HttpPost("UpdateStore{guid}")]
+        public async Task<IActionResult> UpdateStoreByIdAsync([FromBody] StoreDto storeDto, Guid guid)
             {
-            var store = await sender.Send(new UpdateStoreByIdCommand(guid));
+            var store = await sender.Send(new UpdateStoreByIdCommand(guid, storeDto));
             return Ok(store);
             }
 
