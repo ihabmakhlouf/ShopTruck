@@ -5,6 +5,8 @@ option csharp_namespace = "ShopTruck.Store.Grpc";
 service StoreGrpcService
 {
 	rpc GetStoreById(GetStoreByIdRequest) returns (GetStoreByIdResponse);
+	rpc GetStoresByVendorId(GetStoresByVendorIdRequest) returns (GetStoresByVendorIdResponse);
+	
 }
 
 message GetStoreByIdRequest
@@ -19,4 +21,22 @@ message GetStoreByIdResponse
   string City = 3;
   string Country = 4;
   string PostalCode = 5;
+}
+
+message GetStoresByVendorIdRequest 
+{
+  string vendor_id = 1;
+}
+
+message GetStoresByVendorIdResponse 
+{
+  repeated Store stores = 1;
+}
+message Store {
+  string id = 1;
+  string name = 2;
+  string street = 3;
+  string City = 4;
+  string Country = 5;
+  string PostalCode = 6;
 }
