@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 option csharp_namespace = "ShopTruck.Product.Grpc.Protos";
+
 service ProductServiceGrpc
 {
 	rpc GetProductById(GetProductRequest) returns (GetProductResponse);
@@ -12,9 +13,9 @@ message GetProductRequest
 }
 message GetProductResponse 
 {
-  string name = 1;
-  string street = 2;
-  string City = 3;
-  string Country = 4;
-  string PostalCode = 5;
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string categoryId = 4;
+  int32 price = 5;
 }
